@@ -1,0 +1,26 @@
+<section id='features'>
+  {% for row in page.header.rows %}
+    <div class="row feature {{row.name}}">
+
+      <div class="{% if row.image or row.video %}six{% else %}twelve{% endif %} columns {{ row.description_position }}">
+        <h3>{{ row.title }}</h3>
+        <p>{{ row.description }}</p>
+      </div>
+
+      <div class="{% if row.image or row.video %}six{% else %}twelve{% endif %} columns feature-media {% if row.description_position == 'right' %}left{% else %}right{% endif %}">
+        {% if row.image %}
+          {{ page.media[row.image].html() }}
+        {% endif %}
+        {% if row.video %}
+          <div class="fluid-video-wrapper">
+            <iframe src="{{ row.video }}?title=0&amp;byline=0&amp;portrait=0&amp;color=F64B39" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> 
+          </div>
+        {% endif %}
+      </div>
+
+    </div>
+  {% endfor %}
+  <div class="row feature">
+    {{ content }}
+  </div>
+</section>

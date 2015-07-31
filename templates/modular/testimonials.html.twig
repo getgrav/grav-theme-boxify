@@ -1,0 +1,27 @@
+<section id="testimonials">
+    <div class="row content">
+        <span><i class="quote-left fa fa-quote-left"></i></span>
+        <div class="text-container">
+            <div class="twelve columns">
+                {{ content }}
+            </div>
+            <div class="twelve columns flex-container">
+                <div class="flexslider">
+
+                    <ul class="slides">
+                        {% for item in page.header.testimonials %}
+                            <li>
+                                <blockquote>
+                                    <p> {{ item.quote }}</p>
+                                    <cite>{{ item.title }}</cite>
+                                </blockquote>
+                            </li> 
+                        {% endfor %}
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <span><i class="quote-right fa fa-quote-right"></i></span>
+    </div>
+</section>

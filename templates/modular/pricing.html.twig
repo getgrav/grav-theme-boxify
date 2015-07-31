@@ -1,0 +1,32 @@
+<section id="pricing">
+
+  <div class="row section-head">
+    {{ content }}
+  </div>
+
+  <div class="row">
+    <div class="pricing-tables bgrid-quarters s-bgrid-halves">
+      {% for column in page.header.columns %}
+        <div class="column">
+          <div class="price-block">
+            <h3 class="plan-title"><i class="fa fa-{{ column.icon }}"></i>{{ column.title }}</h3>
+            <p class="plan-price">{{ column.price1 }} <span>{{ column.price2 }}</span></p>
+
+            <ul class="features">
+              {% for feature in column.features %}
+               <li>{{ feature.name }}</li> 
+             {% endfor %}
+            </ul>
+
+            <footer class="plan-sign-up">
+              {% for button in column.buttons %}
+               <a class="button" href="{{ button.url }}">{{ button.text }}</a>
+              {% endfor %}
+            </footer>
+       </div> 
+     </div>
+   {% endfor %}
+ </div>
+</div>
+
+</section> 

@@ -1,0 +1,10 @@
+<header id="header">
+  <div class="logo">
+    <a {% if not page %}class="smoothscroll"{% endif %} href="{% if page %}{{ base_url_absolute }}/#hero{% else %}#hero{% endif %}"><img alt="" src="{{ theme_url }}/images/logo.png"></a>
+  </div>
+
+  {% include 'partials/navigation.html.twig' %}
+  {% if site.social %}
+    {% include 'partials/social.html.twig' %}
+  {% endif %}
+</header>

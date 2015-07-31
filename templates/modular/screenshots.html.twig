@@ -1,0 +1,22 @@
+<section id="screenshots">
+    <div class="row section-head">
+        {{ content }}
+    </div>
+    <div class="row">
+        <div class="twelve columns">
+            <div id="screenshots-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
+                {% for item in page.media.images %}
+                    <div class="columns item">
+                        <div class="item-wrap">
+                            <a href="{{ page.url(true) }}/{{ item.filename }}" data-imagelightbox="a" >
+                                {{ item.cropZoom(700, 700).html( item.filename|replace({'-': " "}), item.filename|replace({'-': " "})) }}
+                                <div class="overlay"></div> 
+                                <div class="link-icon"><i class="icon-plus"></i></div>
+                            </a>
+                        </div>
+                    </div> 
+                {% endfor %}
+            </div> 
+        </div> 
+    </div> 
+</section>

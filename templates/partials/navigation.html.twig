@@ -1,0 +1,21 @@
+<nav id="nav-wrap">  
+ <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
+ <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>    
+ <ul id="nav" class="nav">
+    {% for page in pages.children %}
+        {% if page.visible %}
+            {% set current_page = (page.active or page.activeChild) ? 'active' : '' %}
+                <li class="{{ current_page }}">
+                    <a href="{{ page.url }}">
+                        {{ page.menu }}
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+        {% for mitem in site.menu %}
+            <li>
+                <a href="{% if page.activeChild and "#" in mitem.link %}{{ base_url_absolute }}/{{ mitem.link }}{% else %}{{ mitem.link }}{% endif %}" {% if not page.activeChild and not "#" in mitem.link  %}class="smoothscroll"{% endif %}>{{ mitem.text }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</nav>          
