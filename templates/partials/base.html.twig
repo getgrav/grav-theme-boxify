@@ -1,34 +1,45 @@
 <!DOCTYPE html>
-<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="no-js ie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
     {% block head %}
         <meta charset="utf-8" />
         <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
         {% include 'partials/metadata.html.twig' %}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link rel="icon" type="image/png" href="{{ theme_url }}/images/favicon.png" />
+        <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.ico') }}" />
 
          {% block stylesheets %}
-                {% do assets.addCss('theme://css/default.css') %}
-                {% do assets.addCss('theme://css/layout.css') %}
-                {% do assets.addCss('theme://css/media-queries.css') %}
+                {% do assets.addCss('theme://css/bootstrap.min.css') %}
+                {% do assets.addCss('theme://css/jquery.fancybox.css') %}
+                {% do assets.addCss('theme://css/flickity.css') %}
                 {% do assets.addCss('theme://css/animate.css') %}
-                {% do assets.addCss('theme://css/prettyPhoto.css') %}
+                {% do assets.addCss('theme://css/styles.css') %}
+                {% do assets.addCss('theme://css/queries.css') %}
         {% endblock %}
         {{ assets.css() }}
-        <script src="{{ theme_url }}/js/modernizr.js"></script>
+
+        <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+
+        <script src="{{ url('theme://js/modernizr.custom.js') }}"></script>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
         {% endblock head%}
     </head>
     <body>
-        
-        <div id="preloader">      
-            <div id="status">
-                <img src="{{ theme_url }}/images/preloader.gif" height="64" width="64" alt="">
-            </div>
-        </div>
+        <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <!-- open/close -->
 
         {% block header %}
              {% include 'partials/header.html.twig' %}
@@ -41,19 +52,6 @@
         {% block footer %}
              {% include 'partials/footer.html.twig' %}
         {% endblock %}
-        
-        {% block javascripts %}
-            {% do assets.add('jquery',101) %}
-            {% do assets.addJs('theme://js/jquery-migrate-1.2.1.min.js') %}
-            {% do assets.addJs('theme://js/jquery.flexslider.js') %}
-            {% do assets.addJs('theme://js/waypoints.js') %}
-            {% do assets.addJs('theme://js/jquery.fittext.js') %}
-            {% do assets.addJs('theme://js/jquery.fitvids.js') %}
-            {% do assets.addJs('theme://js/imagelightbox.js') %}
-            {% do assets.addJs('theme://js/jquery.prettyPhoto.js') %}
-            {% do assets.addJs('theme://js/main.js') %}
 
-        {% endblock %}
-        {{ assets.js() }}
     </body>
 </html>

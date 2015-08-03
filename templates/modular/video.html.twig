@@ -1,0 +1,16 @@
+<section class="video" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                {% if page.header.videos %}
+                <h1>
+                    {% for video in page.header.videos %}
+                        <a href="{{ video.url }}" class="youtube-media"><i class="fa fa-{{ video.icon }}"></i> {{ video.text }}</a>
+                    {% endfor %}
+                </h1>
+                {% endif %}
+                {{ page.content }}
+            </div>
+        </div>
+    </div>
+</section>
