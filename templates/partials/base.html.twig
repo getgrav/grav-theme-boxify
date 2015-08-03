@@ -9,7 +9,7 @@
         <title>{% if header.title %}{{ header.title }} | {% endif %}{{ site.title }}</title>
         {% include 'partials/metadata.html.twig' %}
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <link rel="icon" type="image/png" href="{{ url('theme://images/favicon.ico') }}" />
+        <link rel="icon" type="image/png" href="{{ url('theme://img/favicon.ico') }}" />
 
          {% block stylesheets %}
                 {% do assets.addCss('theme://css/bootstrap.min.css') %}
@@ -52,6 +52,18 @@
         {% block footer %}
              {% include 'partials/footer.html.twig' %}
         {% endblock %}
+
+        {% block javascripts %}
+            {% do assets.addJs('theme://js/min/toucheffects-min.js') %}
+            {% do assets.add('jquery',101) %}
+            {% do assets.addJs('theme://js/flickity.pkgd.min.js') %}
+            {% do assets.addJs('theme://js/jquery.fancybox.pack.js') %}
+            {% do assets.addJs('theme://js/retina.js') %}
+            {% do assets.addJs('theme://js/waypoints.min.js') %}
+            {% do assets.addJs('theme://js/bootstrap.min.js') %}
+            {% do assets.addJs('theme://js/min/scripts-min.js') %}
+        {% endblock %}
+        {{ assets.js() }}
 
     </body>
 </html>
