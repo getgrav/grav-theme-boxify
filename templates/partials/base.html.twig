@@ -53,6 +53,10 @@
              {% include 'partials/footer.html.twig' %}
         {% endblock %}
 
+        {% block navigation %}
+           {% include 'partials/navigation.html.twig' %}
+        {% endblock %}
+
         {% block javascripts %}
             {% do assets.addJs('theme://js/min/toucheffects-min.js') %}
             {% do assets.add('jquery',101) %}
@@ -65,5 +69,6 @@
         {% endblock %}
         {{ assets.js() }}
 
+     
     </body>
 </html>
