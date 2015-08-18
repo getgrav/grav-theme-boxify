@@ -15,10 +15,10 @@
           {% for item in row %}
             <li>
               <figure>
-                <img src="{{ url('theme://img/' ~ item.image ) }}" alt="{{ item.description }}">
+                <img src="{{ page.media[item.image].url }}" alt="{{ item.description }}">
                 <figcaption>
                   <div class="caption-content">
-                    <a href="{{ url('theme://img/large/' ~ item.large_image ) }}" class="single_image">
+                    <a href="{{ page.media[item.large_image].url }}" class="single_image">
                       <i class="fa fa-{{ item.icon }}"></i><br>
                       <p>{{ item.description }}</p>
                     </a>
