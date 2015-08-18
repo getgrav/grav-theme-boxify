@@ -1,10 +1,15 @@
 {% extends 'partials/base.html.twig' %}
+{% block header %}{% endblock %}
 {% block content %}
-<section id="error" style="padding: 90px 0 72px; background: #fff;">
-    <div class="row section-head">
+ <section class="video"> 
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
         <h1>Error {{ page.header.http_response_code }}</h1>
         {{ page.content }}
-    </div>
+      </div>
+    </div>   
+  </div> 
 </section>
 {% endblock %}
-    
+{% block footer %}{% endblock %}
