@@ -1,0 +1,20 @@
+<div class="overlay overlay-boxify">
+    <nav>
+        {% set show_onpage_menu = header.onpage_menu == true or header.onpage_menu is null %}
+        {% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+            
+        {% for row in page.collection()|batch(2) %}
+         <ul>
+          {% for module in row %} 
+            {% if not module.header.hidemenu %}
+            {% set current_module = (module.active or module.activeChild) ? 'active' : '' %}
+                <li class="{{ current_module }}">
+                    <a href="#{{ _self.pageLinkName(module.menu) }}"><i class="fa fa-link"></i>{{ module.menu }}</a>
+                </li>
+            {% endif %}    
+        {% endfor %}
+    </ul>
+        {% endfor %}
+
+    </nav>
+</div>

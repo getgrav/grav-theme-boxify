@@ -1,0 +1,26 @@
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h1 class="footer-logo">
+                    <img src="{{ url('theme://img/logo-blue.png') }}" alt="Footer Logo Blue">
+                </h1>
+                <p>© Boxify 2015 - <a href="http://tympanus.net/codrops/licensing/">License</a> - Designed &amp; Developed by <a href="http://www.peterfinlan.com/">Peter Finlan</a></p>
+            </div>
+            <div class="col-md-7">
+                <ul class="footer-nav">
+                    {% set show_onpage_menu = header.onpage_menu == true or header.onpage_menu is null %}
+                        {% macro pageLinkName(text) %}{{ text|lower|replace({' ':'_'}) }}{% endmacro %}
+                            {% for module in page.collection() %}
+                               {% if not module.header.hidemenu %}
+                                {% set current_module = (module.active or module.activeChild) ? 'active' : '' %}
+                                    <li class="{{ current_module }}">
+                                        <a href="#{{ _self.pageLinkName(module.menu) }}">{{ module.menu }}</a>
+                                    </li>
+                                {% endif %}    
+                            {% endfor %}
+                            </ul>           
+                        </div>
+                    </div>
+                </div>
+            </footer>

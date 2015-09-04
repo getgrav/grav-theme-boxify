@@ -1,0 +1,34 @@
+<section class="screenshots-intro">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+</section>
+<section class="screenshots" id="screenshots">
+  <div class="container-fluid">
+    {% for row in page.header.screenshots|batch(4) %}
+      <div class="row">
+        <ul class="grid">
+          {% for item in row %}
+            <li>
+              <figure>
+                <img src="{{ page.media[item.image].url }}" alt="{{ item.description }}">
+                <figcaption>
+                  <div class="caption-content">
+                    <a href="{{ page.media[item.large_image].url }}" class="single_image">
+                      <i class="fa fa-{{ item.icon }}"></i><br>
+                      <p>{{ item.description }}</p>
+                    </a>
+                  </div>
+                </figcaption>
+              </figure>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,20 @@
+<section class="features-list" id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {% for item in page.header.featureslist %}
+                    <div class="col-md-4 feature-{{ loop.index }} wp2 {% if item.delay %}delay-{{ item.delay }}s{% endif %}">
+                        <div class="feature-icon">
+                            <i class="fa fa-{{ item.icon }}"></i>
+                        </div>
+                        <div class="feature-content">
+                            <h1>{{ item.title }}</h1>
+                            <p>{{ item.content }}</p>
+                            <a href="{{ item.link }}" class="read-more-btn">{{ item.text }} <i class="fa fa-chevron-circle-right"></i></a>
+                        </div>
+                    </div>
+                {% endfor %} 
+            </div>
+        </div>
+    </div>
+</section>
