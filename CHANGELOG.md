@@ -1,3 +1,9 @@
+# v1.1.1
+## XX/XX/2016
+
+1. [](#bugfix)
+    * Fixed quotes in jQuery selector throwing JS errors
+      
 # v1.1.0
 ## 07/14/2016
 
