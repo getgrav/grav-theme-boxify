@@ -3,6 +3,7 @@
 
 1. [](#bugfix)
     * Fixed quotes in jQuery selector throwing JS errors, also in minified js
+    * Load external resources using https to prevent errors on SSL enabled sites (demo included)
 
 # v1.1.0
 ## 07/14/2016
