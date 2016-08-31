@@ -1,5 +1,5 @@
 # v1.1.1
-## XX/XX/2016
+## 08/31/2016
 
 1. [](#bugfix)
     * Fixed quotes in jQuery selector throwing JS errors, also in minified js
