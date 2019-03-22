@@ -1,5 +1,5 @@
 name: Boxify
-version: 1.1.1
+version: 1.2.0
 description: "Boxify is a Grav port of One Page Website Template by Peter Finlan for Codrops."
 icon: group
 author:
@@ -11,6 +11,8 @@ demo: http://demo.getgrav.org/boxify-skeleton
 keywords: boxify, theme, modern, fast, responsive, html5, css3, onepage
 bugs: https://github.com/getgrav/grav-theme-boxify/issues
 license: Free
+dependencies:
+  - { name: grav, version: '>=1.5.10' }
 
 form:
   validation: strict
