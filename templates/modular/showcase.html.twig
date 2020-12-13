@@ -19,7 +19,7 @@
               </div>
             </div>
             <div class="col-md-6">
-                {{ page.content }}
+                {{ page.content|raw }}
               <blockquote class="team-quote">
                 <div class="avatar"><img src="{{ url('theme://img/avatar.png') }}" alt="User Avatar"></div>
                 <p>{{ page.header.bio }}</p>
