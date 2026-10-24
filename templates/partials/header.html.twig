@@ -12,7 +12,7 @@
       </div>
       <div class="row hero-content">
         <div class="col-md-12">
-          <h1 class="animated fadeInDown">{{ site.header.title }}</h1>
+          <h1 class="animated fadeInDown">{{ site.header.title|raw }}</h1>
 
           {% for button in site.header.buttons %}
               <a href="{{ button.link }}" class="{{ button.class }}">{{ button.text }} {% if button.icon %}<i class="fa fa-{{ button.icon }}"></i>{% endif %}</a>

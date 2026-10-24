@@ -1,3 +1,9 @@
+# v1.2.2
+## 10/23/2026
+
+1. [](#bugfix)
+    * Headings and titles that contain HTML entities such as `&amp;` no longer show them double-escaped on Grav 2
+
 # v1.2.1
 ## 01/15/2021
 
