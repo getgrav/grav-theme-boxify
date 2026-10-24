@@ -14,7 +14,7 @@
                     <ul class="slides" id="featuresSlider">
                         {% for slide in page.header.slider %}
                             <li>
-                                <h1>{{ slide.title }}</h1>
+                                <h1>{{ slide.title|raw }}</h1>
                                 <p>{{ slide.content }}</p>
                                 <p><a href="{{ slide.link_url }}" class="arrow-btn">{{ slide.link_text }} <i class="fa fa-long-arrow-right"></i></a></p>
                             </li>
