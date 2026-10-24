@@ -1,3 +1,9 @@
+# v1.2.3
+## 10/24/2026
+
+1. [](#bugfix)
+    * Updated the theme's JavaScript to work with jQuery 3, which current Grav versions load
+
 # v1.2.2
 ## 10/23/2026
 
